@@ -47,6 +47,7 @@ void TopDownMap::drawMap()
 
         glPushMatrix();
         glTranslatef(x,y,0);
+        glScalef(sizef,sizef, 1);
         drawTile();
         glPopMatrix();
     }
@@ -57,10 +58,9 @@ void TopDownMap::drawMap()
 void TopDownMap::moveMap()
 {
     if(difftime(clock(), st_time) > 30) {
-
         float delta_t = 0.03;
-        x_pos = mmh->get_x_pos(delta_t, x_pos);
-        y_pos = mmh->get_y_pos(delta_t, y_pos);
+        x_pos = mmh->get_x_pos(delta_t);
+        y_pos = mmh->get_y_pos(delta_t);
 
         st_time=clock();
     }

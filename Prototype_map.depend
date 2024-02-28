@@ -18,11 +18,12 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1708934185 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\common.h
+1709157826 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\common.h
 	<iostream>
 	<vector>
 	<string>
 	<tuple>
+	<time.h>
 	<math.h>
 	<gl/gl.h>
 	<GL/glut.h>
@@ -40,13 +41,13 @@
 
 1707875506 c:\users\15597\documents\csci173 and game dev\common\include\soil.h
 
-1708989987 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\glbasic\glscene.cpp
+1709157426 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\glbasic\glscene.cpp
 	"GLBasics/GLScene.h"
 
 1708917208 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\glbasic\gltexture.cpp
 	"GLBasics/GLTexture.h"
 
-1708990275 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\topdownmap.cpp
+1709057155 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\topdownmap.cpp
 	"TopDownMap.h"
 
 1708989918 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\topdownmap.h
@@ -70,24 +71,26 @@
 	<GLBasics/GLTexture.h>
 	<GLBasics/GLInput.h>
 
-1708916135 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\hero.h
+1709157494 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\hero.h
 	<GLBasics/GLTexture.h>
+	<Common.h>
 
-1708916647 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\hero.cpp
+1709157503 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\hero.cpp
 	"Hero.h"
 
-1708932388 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\glbasic\glinput.cpp
+1709157370 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\glbasic\glinput.cpp
 	"GLBasics/GLInput.h"
 
-1708932366 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\glbasics\glinput.h
+1709156934 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\glbasics\glinput.h
 	<TopDownMap.h>
 	<MapMoveHandler.h>
 	<Common.h>
+	<Hero.h>
 
-1708990577 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\mapmovehandler.cpp
+1709157638 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\mapmovehandler.cpp
 	"MapMoveHandler.h"
 
-1708990483 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\mapmovehandler.h
+1709085105 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\mapmovehandler.h
 	<Common.h>
 	<MapData.h>
 

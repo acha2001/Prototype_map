@@ -4,6 +4,7 @@
 #include <TopDownMap.h>
 #include <MapMoveHandler.h>
 #include <Common.h>
+#include <Hero.h>
 
 class GLInput
 {
@@ -16,6 +17,7 @@ class GLInput
         void initInput(MapMoveHandler *mmh_);
 
         void keyPress();      // when key pressed
+        void heroKey(Hero *myHero);
         void keyUP();         // when key released
 
         void mouseEventDown(double, double); // mouse button pressed

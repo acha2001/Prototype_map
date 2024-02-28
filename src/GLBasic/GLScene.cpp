@@ -1,9 +1,10 @@
 #include "GLBasics/GLScene.h"
 
 TopDownMap *mp = new TopDownMap();
-MapMoveHandler *mmh = new MapMoveHandler();
-Hero *hero = new Hero();
 MapData *myMapData = new MapData(); // this will hold map data
+MapMoveHandler *mmh = new MapMoveHandler();
+
+Hero *hero = new Hero();
 
 GLInput *KbMs = new GLInput();
 
@@ -28,10 +29,13 @@ GLint GLScene::initGL()
 
     glEnable(GL_TEXTURE_2D);  //enable textures
 
+    myMapData->readFileData("mapData/map1.txt"); // this needs to be done !!BEFORE!! init map or mmh
+
     mp->initMap(mmh, myMapData);
+    mmh->setMapData(myMapData);
     hero->initHero();
     KbMs->initInput(mmh);
-    myMapData->readFileData("mapData/map1.txt");
+
 
     return true;
 }
@@ -75,6 +79,7 @@ int GLScene::windMsg(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         case WM_KEYDOWN:
              KbMs->wParam = wParam;
              KbMs->keyPress();// I don't think this is for player
+             KbMs->heroKey(hero);
              break;
 
          case WM_KEYUP:

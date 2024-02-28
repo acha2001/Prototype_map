@@ -15,13 +15,25 @@ void Hero::initHero()
     heroTexture->loadTexture("images/purple.jpg");
 }
 
+void Hero::attack()
+{
+    attack_timer = clock();
+    attacking=true;
+    hero_size+=ATTACK_R;
+}
+
 void Hero::drawHero()
 {
+    if(attacking && clock()-attack_timer > 500) {
+        attacking = false;
+        hero_size = 0.2;
+    }
+
     glColor3f(1.0,1.0,1.0); // colored rectangle
     heroTexture->bindTexture(); // binding background texture
 
     glPushMatrix();
-    glScalef(0.2,0.2,1);
+    glScalef(hero_size,hero_size,1);
 
     glBegin(GL_POLYGON); // drawing quad with polygons
 

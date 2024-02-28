@@ -41,6 +41,15 @@ void GLInput::keyPress()
         break;
     }
 }
+void GLInput::heroKey(Hero *myHero)
+{
+    switch(wParam)
+    {
+    case VK_SPACE:
+        myHero->attack();
+        break;
+    }
+}
 void GLInput::keyUP()
 {
     switch(wParam)
