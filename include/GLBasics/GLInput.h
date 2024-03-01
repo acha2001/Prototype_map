@@ -1,8 +1,8 @@
 #ifndef GLINPUT_H
 #define GLINPUT_H
 
-#include <TopDownMap.h>
-#include <MapMoveHandler.h>
+#include <map/TopDownMap.h>
+#include <map/MapMoveHandler.h>
 #include <Common.h>
 #include <Hero.h>
 

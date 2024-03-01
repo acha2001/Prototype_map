@@ -2,7 +2,7 @@
 #define MAPMOVEHANDLER_H
 
 #include <Common.h>
-#include <MapData.h>
+#include <map/MapData.h>
 
 
 /*

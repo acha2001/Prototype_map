@@ -1,5 +1,18 @@
-10.0 20.0 0.0
+# ALL MAPS Must follow this format
+# Map Dimensions and place holder at the end
+10 20 0.0
+# Obstacle positions and size where x,y,size
 1.0 1.0 1.0
 1.0 -3.0 2
 -1.0 1.0 1
 -3.0 5.1 3.5
+# For testing boundary check
+-33.0 5.1 3.5
+-33.0 5.1 3.5
+-33.0 5.1 3.5
+-33.0 5.1 3.5
+-33.0 5.1 3.5
+-33.0 5.1 3.5
+-33.0 5.1 3.5
+-33.0 5.1 3.5
+-33.0 5.1 3.5

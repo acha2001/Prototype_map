@@ -4,10 +4,11 @@
 #include <windows.h>
 #include <Common.h>
 
-#include <MapMoveHandler.h>
-#include <TopDownMap.h>
+#include <map/MapMoveHandler.h>
+#include <map/TopDownMap.h>
 #include <Hero.h>
-#include <MapData.h>
+#include <Enemy.h>
+#include <map/MapData.h>
 
 #include <GLBasics/GLTexture.h>
 #include <GLBasics/GLInput.h>

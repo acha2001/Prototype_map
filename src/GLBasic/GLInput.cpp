@@ -39,6 +39,25 @@ void GLInput::keyPress()
     case VK_SPACE:
         std::cout<<"Space"<<std::endl;
         break;
+    case 'A':
+    case 'a':
+        mmh->setAcceleration("left");
+        break;
+
+    case 'D':
+    case 'd':
+        mmh->setAcceleration("right");
+        break;
+
+    case 'S':
+    case 's':
+        mmh->setAcceleration("down");
+        break;
+
+    case 'W':
+    case 'w':
+        mmh->setAcceleration("up");
+        break;
     }
 }
 void GLInput::heroKey(Hero *myHero)
@@ -71,6 +90,25 @@ void GLInput::keyUP()
         mmh->setDeceleration("up");
         break;
 
+    case 'A':
+    case 'a':
+        mmh->setDeceleration("left");
+        break;
+
+    case 'D':
+    case 'd':
+        mmh->setDeceleration("right");
+        break;
+
+    case 'S':
+    case 's':
+        mmh->setDeceleration("down");
+        break;
+
+    case 'W':
+    case 'w':
+        mmh->setDeceleration("up");
+        break;
     case VK_SPACE:
         std::cout<<"Space up"<<std::endl;
         break;

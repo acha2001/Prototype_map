@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
-1708907017 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\main.cpp
+1709325507 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\main.cpp
 	<windows.h>
-	<GLScene.h>
+	<GLBasics/GLScene.h>
 	<GL/glut.h>
 	<stdlib.h>
 	<iostream>
@@ -18,7 +18,7 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1709157826 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\common.h
+1709328142 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\common.h
 	<iostream>
 	<vector>
 	<string>
@@ -41,33 +41,35 @@
 
 1707875506 c:\users\15597\documents\csci173 and game dev\common\include\soil.h
 
-1709157426 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\glbasic\glscene.cpp
+1709325919 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\glbasic\glscene.cpp
 	"GLBasics/GLScene.h"
 
 1708917208 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\glbasic\gltexture.cpp
 	"GLBasics/GLTexture.h"
 
-1709057155 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\topdownmap.cpp
+1709325834 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\topdownmap.cpp
 	"TopDownMap.h"
 
-1708989918 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\topdownmap.h
+1709325729 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\topdownmap.h
 	<Common.h>
 	<GLBasics/GLTexture.h>
 	<MapMoveHandler.h>
 	<time.h>
 	<MapData.h>
+	<Enemy.h>
 
 1708908599 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\glbasics\gltexture.h
 	<SOIL.h>
 	<Common.h>
 
-1708973441 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\glbasics\glscene.h
+1709331386 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\glbasics\glscene.h
 	<windows.h>
 	<Common.h>
-	<MapMoveHandler.h>
-	<TopDownMap.h>
+	<map/MapMoveHandler.h>
+	<map/TopDownMap.h>
 	<Hero.h>
-	<MapData.h>
+	<Enemy.h>
+	<map/MapData.h>
 	<GLBasics/GLTexture.h>
 	<GLBasics/GLInput.h>
 
@@ -75,26 +77,26 @@
 	<GLBasics/GLTexture.h>
 	<Common.h>
 
-1709157503 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\hero.cpp
+1709325684 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\hero.cpp
 	"Hero.h"
 
-1709157370 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\glbasic\glinput.cpp
+1709158318 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\glbasic\glinput.cpp
 	"GLBasics/GLInput.h"
 
-1709156934 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\glbasics\glinput.h
-	<TopDownMap.h>
-	<MapMoveHandler.h>
+1709331393 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\glbasics\glinput.h
+	<map/TopDownMap.h>
+	<map/MapMoveHandler.h>
 	<Common.h>
 	<Hero.h>
 
-1709157638 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\mapmovehandler.cpp
+1709329774 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\mapmovehandler.cpp
 	"MapMoveHandler.h"
 
 1709085105 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\mapmovehandler.h
 	<Common.h>
 	<MapData.h>
 
-1708989835 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\mapdata.cpp
+1709158449 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\mapdata.cpp
 	"MapData.h"
 
 1708989828 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\mapdata.h
@@ -103,4 +105,39 @@
 	<sstream>
 
 1708973863 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\mapdata\map1.c
+
+1709330136 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\enemy.cpp
+	"Enemy.h"
+
+1709331376 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\enemy.h
+	<Common.h>
+	<GLBasics/GLTexture.h>
+	<map/MapMoveHandler.h>
+	<map/MapData.h>
+
+1709331350 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\map\mapdata.cpp
+	"map/MapData.h"
+
+1708989828 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\map\mapdata.h
+	<Common.h>
+	<fstream>
+	<sstream>
+
+1709331357 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\map\mapmovehandler.cpp
+	"map/MapMoveHandler.h"
+
+1709331364 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\map\mapmovehandler.h
+	<Common.h>
+	<map/MapData.h>
+
+1709331360 source:c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\src\map\topdownmap.cpp
+	"map/TopDownMap.h"
+
+1709331372 c:\users\15597\documents\csci173 and game dev\mygame\prototype_map\include\map\topdownmap.h
+	<Common.h>
+	<GLBasics/GLTexture.h>
+	<map/MapMoveHandler.h>
+	<time.h>
+	<map/MapData.h>
+	<Enemy.h>
 

@@ -14,6 +14,7 @@
 #include <windows.h>
 
 #define ATTACK_R 0.2f
+#define PI 3.1415926
 
 
 typedef struct {

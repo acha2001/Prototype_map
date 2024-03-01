@@ -14,6 +14,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -24,6 +25,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -35,6 +37,7 @@
 			<Add directory="C:/Users/15597/Documents/csci173 and Game Dev/common/include" />
 		</Compiler>
 		<Linker>
+			<Add library="../../common/lib/libSOIL.a" />
 			<Add library="glut32" />
 			<Add library="opengl32" />
 			<Add library="glu32" />
@@ -42,7 +45,28 @@
 			<Add library="gdi32" />
 			<Add directory="C:/Users/15597/Documents/csci173 and Game Dev/common/lib" />
 		</Linker>
+		<Unit filename="include/Common.h" />
+		<Unit filename="include/Enemy.h" />
+		<Unit filename="include/GLBasics/GLInput.h" />
+		<Unit filename="include/GLBasics/GLScene.h" />
+		<Unit filename="include/GLBasics/GLTexture.h" />
+		<Unit filename="include/Hero.h" />
+		<Unit filename="include/MapData.h" />
+		<Unit filename="include/MapMoveHandler.h" />
+		<Unit filename="include/TopDownMap.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="mapData/map1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mapData/map1.txt" />
+		<Unit filename="src/Enemy.cpp" />
+		<Unit filename="src/GLBasic/GLInput.cpp" />
+		<Unit filename="src/GLBasic/GLScene.cpp" />
+		<Unit filename="src/GLBasic/GLTexture.cpp" />
+		<Unit filename="src/Hero.cpp" />
+		<Unit filename="src/MapData.cpp" />
+		<Unit filename="src/MapMoveHandler.cpp" />
+		<Unit filename="src/TopDownMap.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

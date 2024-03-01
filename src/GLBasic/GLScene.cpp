@@ -4,8 +4,8 @@ TopDownMap *mp = new TopDownMap();
 MapData *myMapData = new MapData(); // this will hold map data
 MapMoveHandler *mmh = new MapMoveHandler();
 
+Enemy *enemy = new Enemy();
 Hero *hero = new Hero();
-
 GLInput *KbMs = new GLInput();
 
 
@@ -16,13 +16,12 @@ GLScene::GLScene()
     screenHeight= GetSystemMetrics(SM_CYSCREEN);
 }
 
-
 GLScene::~GLScene() {}
 
 GLint GLScene::initGL()
 {
     glShadeModel(GL_SMOOTH); // for smooth render
-    glClearColor(0.0f,0.0f,0.0f,0.0f); // clear background to black
+    glClearColor(0.5f,0.25f,0.33f,0.8f); // clear background to black
     glClearDepth(2.0f);            // depth test for layers
     glEnable(GL_DEPTH_TEST);       // activate depth test
     glDepthFunc(GL_LEQUAL);         // depth function type
@@ -35,6 +34,7 @@ GLint GLScene::initGL()
     mmh->setMapData(myMapData);
     hero->initHero();
     KbMs->initInput(mmh);
+    enemy->initEnemy(mmh, myMapData);
 
 
     return true;
@@ -55,6 +55,9 @@ GLint GLScene::drawScene()    // this function runs on a loop
     glPopMatrix();
     glPushMatrix();
         hero->drawHero();
+    glPopMatrix();
+    glPushMatrix();
+        enemy->drawEnemy();
     glPopMatrix();
 
 

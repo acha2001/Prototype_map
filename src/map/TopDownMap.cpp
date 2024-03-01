@@ -1,8 +1,10 @@
-#include "TopDownMap.h"
+#include "map/TopDownMap.h"
 
 TopDownMap::TopDownMap() {}
 
-TopDownMap::~TopDownMap() {}
+TopDownMap::~TopDownMap() {
+
+}
 
 void TopDownMap::initMap(MapMoveHandler *mmh_, MapData *mpd_)
 {
@@ -21,20 +23,22 @@ void TopDownMap::drawMap()
     // This is the main function and should only be called by main
 
     glColor3f(1.0,1.0,1.0); // colored rectangle
-
     freeTexture->bindTexture(); // binding background texture
+
+    glPushMatrix(); // main block
+
+
+    moveMap(); // get x and y positions
+    glTranslatef(mmh->x_pos, mmh->y_pos, 0.0);// setting position of map;
+
     glPushMatrix();
 
+        glScalef(std::get<0>(mapData->mapDimensions), // width
+                 std::get<1>(mapData->mapDimensions), // height
+                 1.0); // dont scale y
 
-    moveMap();
-    glTranslatef(x_pos, y_pos, 0.0);
-
-
-    glPushMatrix();
-        glScalef(std::get<0>(mapData->mapDimensions),
-                 std::get<1>(mapData->mapDimensions),
-                 1.0);
         drawTile();
+
     glPopMatrix();
 
     closedTexture->bindTexture();
@@ -46,13 +50,17 @@ void TopDownMap::drawMap()
         std::tie(x, y, sizef) = tuple;
 
         glPushMatrix();
-        glTranslatef(x,y,0);
-        glScalef(sizef,sizef, 1);
-        drawTile();
+
+            glTranslatef(x,y,0);
+            glScalef(sizef,sizef, 1);
+            drawTile();
+
         glPopMatrix();
     }
 
-    glPopMatrix();
+
+    glPopMatrix(); // end drawing of env
+
 
 }
 void TopDownMap::moveMap()
@@ -70,8 +78,6 @@ void TopDownMap::drawTile() {
 
     glPushMatrix();
     glBegin(GL_POLYGON); // drawing quad with polygons
-
-
         glTexCoord2f(0,0);
         glVertex3f(-0.5,-0.5,-8.0);
 

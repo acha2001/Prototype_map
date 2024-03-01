@@ -1,4 +1,4 @@
-#include "MapData.h"
+#include "map/MapData.h"
 
 MapData::MapData()
 {
@@ -29,6 +29,10 @@ void MapData::readFileData(char* fileName)
 
     float x,y,sizef;
     while(std::getline(inFile, line)){
+
+        if(line[0] == '#'){
+            continue;
+        }
 
         std::istringstream iss(line);
 

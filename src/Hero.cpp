@@ -17,6 +17,9 @@ void Hero::initHero()
 
 void Hero::attack()
 {
+    if (attacking) {
+        return;
+    }
     attack_timer = clock();
     attacking=true;
     hero_size+=ATTACK_R;
@@ -24,7 +27,7 @@ void Hero::attack()
 
 void Hero::drawHero()
 {
-    if(attacking && clock()-attack_timer > 500) {
+    if(attacking && clock()-attack_timer > 250) {
         attacking = false;
         hero_size = 0.2;
     }
@@ -38,16 +41,16 @@ void Hero::drawHero()
     glBegin(GL_POLYGON); // drawing quad with polygons
 
         glTexCoord2f(0,0);
-        glVertex3f(-0.5,-0.5,-7.0);
+        glVertex3f(-0.5,-0.5,-8.0);
 
         glTexCoord2f(1,0);
-        glVertex3f(0.5,-0.5,-7.0);
+        glVertex3f(0.5,-0.5,-8.0);
 
         glTexCoord2f(1,1);
-        glVertex3f(0.5,0.5,-7.0);
+        glVertex3f(0.5,0.5,-8.0);
 
         glTexCoord2f(0,1);
-        glVertex3f(-0.5,0.5,-7.0);
+        glVertex3f(-0.5,0.5,-8.0);
 
     glEnd();
     glPopMatrix();

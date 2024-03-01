@@ -1,4 +1,4 @@
-#include "MapMoveHandler.h"
+#include "map/MapMoveHandler.h"
 
 MapMoveHandler::MapMoveHandler() {}
 
@@ -7,16 +7,19 @@ MapMoveHandler::~MapMoveHandler() {}
 void MapMoveHandler::setMapData(MapData *mapData_)
 {
     mapData = mapData_;
-
-    std::cout <<"SETING MAP DATA"<<std::endl;
     makeBoundingBoxes();
-    for(auto&& tuple: mapData->obstacle_data)
-    {
+}
+
+void MapMoveHandler::makeBoundingBoxes()
+{
+    // Creates bounding boxes for boundary check
+    for(auto&& tuple: mapData->obstacle_data) {
+
         float obs_x,obs_y,obs_sizef;
         std::tie(obs_x, obs_y, obs_sizef) = tuple;
 
-
         boundBox temp;
+
         temp.topLeft.x=obs_x-(obs_sizef/2);
         temp.topLeft.y=obs_y+(obs_sizef/2);
 
@@ -24,18 +27,7 @@ void MapMoveHandler::setMapData(MapData *mapData_)
         temp.bottomRight.y=obs_y-(obs_sizef/2);
 
         Boxes.push_back(temp);
-
-        std::cout<<"TL_x = "<<temp.topLeft.x<<", TL_y = "<<temp.topLeft.y<<std::endl;
-        std::cout<<"BR_x = "<<temp.bottomRight.x<<", BR_y = "<<temp.bottomRight.y<<std::endl;
     }
-    std::cout<<Boxes.size()<<std::endl;
-    //std::cout<<"TL_x = "<<Boxes[0].topLeft.x<<", TL_y = "<<Boxes[0].topLeft.y<<std::endl;
-    //std::cout<<"BR_x = "<<Boxes[0].bottomRight.x<<", BR_y = "<<Boxes[0].bottomRight.y<<std::endl;
-}
-
-void MapMoveHandler::makeBoundingBoxes()
-{
-    std::cout<<mapData->obstacle_data.size()<<std::endl;
 }
 
 bool MapMoveHandler::envCollision(int dim)
@@ -79,7 +71,8 @@ bool MapMoveHandler::obstacleCollision(int dim) {
 float MapMoveHandler::get_x_pos(float delta_t)
 {
     x_pos+=(x_a*delta_t*-1);
-    if(envCollision(1) || obstacleCollision(1)) {
+    if(envCollision(1) || obstacleCollision(1)) { // comment out for testin
+    //if (false) {
         x_pos-=(x_a*delta_t*-1);
         return x_pos;
     }
@@ -89,6 +82,7 @@ float MapMoveHandler::get_y_pos(float delta_t)
 {
     y_pos+=(y_a*delta_t*-1);
     if (envCollision(2)||obstacleCollision(2)) {
+    //if(false) {
         y_pos-=(y_a*delta_t*-1);
         return y_pos;
     }

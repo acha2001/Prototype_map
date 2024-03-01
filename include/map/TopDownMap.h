@@ -3,9 +3,10 @@
 
 #include <Common.h>
 #include <GLBasics/GLTexture.h>
-#include <MapMoveHandler.h>
+#include <map/MapMoveHandler.h>
 #include <time.h>
-#include <MapData.h>
+#include <map/MapData.h>
+#include <Enemy.h>
 
 
 /*
